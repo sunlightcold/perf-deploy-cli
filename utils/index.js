@@ -75,7 +75,7 @@ function checkConfigScheme(configKey, configObj) {
 function checkDeployConfig(deployConfigPath) {
   if (fs.existsSync(deployConfigPath)) {
     const config = require(deployConfigPath);
-    const { privateKey, passphrase, projectName } = config;
+    const { privateKey, passphrase, projectName, maxTry } = config;
     const keys = Object.keys(config);
     const configs = [];
     for (let key of keys) {
@@ -87,6 +87,7 @@ function checkDeployConfig(deployConfigPath) {
         config[key].privateKey = privateKey;
         config[key].passphrase = passphrase;
         config[key].projectName = projectName;
+        config[key].maxTry = maxTry;
         configs.push(config[key]);
       }
     }

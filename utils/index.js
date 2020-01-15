@@ -4,11 +4,12 @@ const semver = require('semver');
 
 const DEPLOY_SCHEMA = {
   name: '',
-  script: "",
+  script: '',
   host: '',
   port: 22,
   username: '',
   password: '',
+  isNpmBuild: false,
   webDir: []
 };
 
@@ -50,6 +51,7 @@ function checkConfigScheme(configKey, configObj) {
   const deploySchemaKeys = Object.keys(DEPLOY_SCHEMA);
   const configKeys = Object.keys(configObj);
   const neededKeys = [];
+  
   for (let key of deploySchemaKeys) {
     if (!configKeys.includes(key)) {
       neededKeys.push(key);

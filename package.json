@@ -20,7 +20,7 @@
         "url": "https://github.com/sunlightcold/perf-deploy-cli"
     },
     "dependencies": {
-        "archiver": "^5.3.0",
+        "archiver": "^3.1.1",
         "chalk": "^3.0.0",
         "commander": "^8.1.0",
         "download-git-repo": "^3.0.2",

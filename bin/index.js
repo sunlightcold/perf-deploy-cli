@@ -28,8 +28,8 @@ program
   });
 
 // 获取命令参数
-const agrs = process.argv.slice(2);
-const firstArg = agrs[0];
+const args = process.argv.slice(2);
+const firstArg = args[0];
 
 // 非version选项且有配置文件时，进入部署流程
 if (!versionOptions.includes(firstArg) && fs.existsSync(deployConfigPath)) {
